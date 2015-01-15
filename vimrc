@@ -46,6 +46,7 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set relativenumber
+set nowrap
 
 " always show airline
 set laststatus=2
