@@ -13,9 +13,19 @@ curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh >
 # install NeoBundle
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
+# vim tmp
+mkdir ~/tmp/
+
+# backup folder
+mkdir ~/dotbackup/
+
 # symlink files
-mv ~/.zshrc{,.bak}
-ln -s ~/dotfiles/zshrc ~/.zshrc
-mv ~/.vimrc{,.bak}
-ln -s ~/dotfiles/vimrc ~/.vimrc
+symlink() {
+  mv ~/.$1 ~/dotbackup/$1
+  ln -s ~/dotfiles/$1 ~/.$1
+}
+
+symlink "zshrc"
+symlink "vimrc"
+symlink "gitconfig"
 
