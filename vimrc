@@ -39,6 +39,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'CRefVim'
 
 " Required:
 call neobundle#end()
