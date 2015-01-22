@@ -40,6 +40,7 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'CRefVim'
+NeoBundle 'scrooloose/syntastic'
 
 " Required:
 call neobundle#end()
@@ -140,6 +141,20 @@ nnoremap <C-Right> <C-W>>
 " Keybinds:
 let g:ctrlp_map = "<c-p>"
 let g:ctrlp_cmd = "CtrlP"
+
+" Syntastic:
+let g:syntastic_c_check_header=1
+let g:syntastic_c_no_include_search=0
+let g:syntastic_c_auto_refresh_includes=1
+let g:syntastic_c_compiler = 'clang'
+
+let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs=1
+
+let g:syntastic_error_symbol = "X"
+let g:syntastic_style_error_symbol = ">"
+let g:syntastic_warning_symbol = "!"
+let g:syntastic_style_warning_symbol = ">"
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
