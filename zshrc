@@ -1,7 +1,7 @@
 source ~/.antigen/antigen.zsh
 
 antigen bundle robbyrussell/oh-my-zsh lib/
-antigen theme af-magic
+antigen theme ~/dotfiles/themes/ binary
 
 antigen bundle git
 antigen bundle pip
