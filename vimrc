@@ -131,6 +131,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Simpler window resizing
+nnoremap <C-Up> <C-W>-
+nnoremap <C-Down> <C-W>+
+nnoremap <C-Left> <C-W><
+nnoremap <C-Right> <C-W>>
+
 " Keybinds:
 let g:ctrlp_map = "<c-p>"
 let g:ctrlp_cmd = "CtrlP"
