@@ -14,6 +14,10 @@ antigen apply
 alias l="ls -laF"
 alias c="clear"
 
+alias spi="sudo pacman -S"
+alias spu="sudo pacman -Syu"
+alias spr="sudo pacman -Rns"
+
 # cygwin clear clipboard
 alias ccl="echo '' > /dev/clipboard"
 
