@@ -23,9 +23,19 @@ antigen-apply
 alias l="ls -laF"
 alias c="clear"
 
+# package manager
+local kernel=`uname -r`
+
 alias spi="sudo pacman -S"
 alias spu="sudo pacman -Syu"
 alias spr="sudo pacman -Rns"
+
+if [[ $kernel != *"ARCH" ]]
+then
+  alias spi="sudo apt-get install"
+  alias spu="sudo apt-get update && sudo apt-get upgrade"
+  alias spr="sudo apt-get remove"
+fi
 
 # cygwin clear clipboard
 alias ccl="echo '' > /dev/clipboard"
