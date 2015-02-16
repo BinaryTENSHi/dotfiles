@@ -8,7 +8,7 @@ fi
 
 # install antigen
 mkdir -p ~/.antigen/
-curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen/antigen.zsh
+git clone https://github.com/zsh-users/antigen.git ~/.antigen/
 
 # install NeoBundle
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh

@@ -1,15 +1,24 @@
 source ~/.antigen/antigen.zsh
 
-antigen bundle robbyrussell/oh-my-zsh lib/
-antigen theme ~/dotfiles/themes/ binary
+antigen-bundles <<EOBUNDLES
+colored-man
+sudo
+git
+pip
+command-not-found
+vagrant
+gem
 
-antigen bundle git
-antigen bundle pip
-antigen bundle command-not-found
+robbyrussell/oh-my-zsh lib/
 
-antigen bundle zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions src
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting
+EOBUNDLES
 
-antigen apply
+antigen-theme ~/dotfiles/themes/ binary
+
+antigen-apply
 
 alias l="ls -laF"
 alias c="clear"
