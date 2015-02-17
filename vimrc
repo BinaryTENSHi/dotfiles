@@ -59,17 +59,41 @@ set autoindent
 set relativenumber
 set nowrap
 
-" fix backspace in cygwin
+" Ignore case in search
+set ignorecase
+
+" Show “invisible” characters
+set lcs=tab:▸\ ,trail:·,nbsp:_
+set list
+
+" Highlight searches
+set hlsearch
+
+" Highlight search pattern while typing
+set incsearch
+
+" Don't reset cursor
+set nostartofline
+
+" Show filename in titlebar
+set title
+
+" Start scrolling 3 lines / 10 cols before border
+set scrolloff=3
+set sidescroll=1
+set sidescrolloff=10
+
+" Fix backspace in cygwin
 if has("win32unix")
   set backspace=2
 endif
 
-" always show airline
+" Always show airline
 set laststatus=2
 let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 
-" neocomplcache
+" Neocomplcache
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_disable_auto_complete=1
