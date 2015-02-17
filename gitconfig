@@ -2,3 +2,9 @@
   name = BinaryTENSHi
   email = "binarytenshi@gmail.com"
   username = BinaryTENSHi
+[core]
+	autocrlf = false
+[push]
+	default = simple
+[color]
+	ui = auto
