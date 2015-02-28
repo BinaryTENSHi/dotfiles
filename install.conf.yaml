@@ -3,6 +3,9 @@
     ~/.config/bspwm:
       create: true
       path: bspwm
+    ~/.config/sxhkd:
+      create: true
+      path: sxhkd
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
