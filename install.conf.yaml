@@ -1,5 +1,8 @@
 - clean: ['~']
 - link:
+    ~/.config/bspwm:
+      create: true
+      path: bspwm
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig

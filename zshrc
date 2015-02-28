@@ -26,9 +26,12 @@ alias c="clear"
 # package manager
 local kernel=`uname -r`
 
-alias spi="sudo pacman -S"
+alias spi="sudo pacman -Sy"
 alias spu="sudo pacman -Syu"
 alias spr="sudo pacman -Rns"
+alias sai="sudo aura -Ay"
+alias sau="sudo aura -Ayu"
+alias sar="sudo aura -Rns"
 
 if [[ $kernel != *"ARCH" ]]
 then
