@@ -1,0 +1,3 @@
+URxvt.scrollBar: false
+URxvt*loginShell: true
+URxvt.font: xft:Terminess Powerline:pixelsize=12, xft:Kochi Gothic:antialias=false

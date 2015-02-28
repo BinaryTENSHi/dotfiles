@@ -6,6 +6,8 @@
     ~/.config/sxhkd:
       create: true
       path: sxhkd
+    ~/.profile: profile
+    ~/.Xresources: Xresources
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
