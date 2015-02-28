@@ -13,3 +13,5 @@
     ~/.gitconfig: gitconfig
 - shell:
     - [mkdir -p ~/tmp, Creating vim temp directory]
+    - ['git clone https://github.com/zsh-users/antigen.git ~/.antigen/', Cloning antigen]
+    - ['curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh', Installing NeoBundle]
