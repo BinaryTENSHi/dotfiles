@@ -51,3 +51,9 @@ export EDITOR=$VISUAL
 # set color terminal
 TERM=xterm-256color
 
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
