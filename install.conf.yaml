@@ -6,6 +6,9 @@
     ~/.config/sxhkd:
       create: true
       path: sxhkd
+    ~/.config/compton.conf:
+      create: true
+      path: compton.conf
     ~/.profile: profile
     ~/.Xresources: Xresources
     ~/.vimrc: vimrc

@@ -3,6 +3,7 @@
 #
 
 super + alt + Escape
+	killall panel; \
 	bspc quit
 
 super + w

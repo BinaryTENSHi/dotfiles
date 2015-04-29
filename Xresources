@@ -1,3 +1,34 @@
-URxvt.scrollBar: false
-URxvt*loginShell: true
-URxvt.font: xft:Terminess Powerline:pixelsize=12, xft:Kochi Gothic:antialias=false
+!General
+urxvt*loginShell:         true
+urxvt*scrollBar:         false
+urxvt*secondaryScroll:    true
+urxvt*saveLines:         65535
+urxvt*cursorBlink:       false
+urxvt*urgentOnBell:       true
+
+! Appearance
+urxvt*cursorColor:     #DCDCCC
+urxvt*font: xft:Terminess Powerline:pixelsize=12, xft:Kochi Gothic:antialias=false
+
+! Colors
+urxvt*depth:                32
+urxvt*foreground:      #b4b4b4
+urxvt*background:  [85]#111111
+
+urxvt*color0:          #000000
+urxvt*color8:          #555753
+urxvt*color1:          #ff6565
+urxvt*color9:          #ff8d8d
+urxvt*color2:          #93d44f
+urxvt*color10:         #c8e7a8
+urxvt*color3:          #eab93d
+urxvt*color11:         #ffc123
+urxvt*color4:          #204a87
+urxvt*color12:         #3465a4
+urxvt*color5:          #ce5c00
+urxvt*color13:         #f57900
+urxvt*color6:          #89b6e2
+urxvt*color14:         #46a4ff
+urxvt*color7:          #cccccc
+urxvt*color15:         #ffffff
+
