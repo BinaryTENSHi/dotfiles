@@ -60,3 +60,6 @@ eval "$(pyenv virtualenv-init -)"
 export NVM_DIR="/home/$USERNAME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+# git-hub
+source ~/.git-hub/init
+
