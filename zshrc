@@ -37,6 +37,7 @@ alias sar="sudo aura -Rns"
 
 if [[ $kernel != *"ARCH" ]]
 then
+  alias sps="sudo apt-cache search"
   alias spi="sudo apt-get install"
   alias spu="sudo apt-get update && sudo apt-get upgrade"
   alias spr="sudo apt-get remove"
