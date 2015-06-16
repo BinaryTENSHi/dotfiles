@@ -40,7 +40,9 @@ then
   alias sps="sudo apt-cache search"
   alias spi="sudo apt-get install"
   alias spu="sudo apt-get update && sudo apt-get upgrade"
+  alias spdu="sudo apt-get update && sudo apt-get dist-upgrade"
   alias spr="sudo apt-get remove"
+  alias spar="sudo apt-get autoremove"
 fi
 
 # cygwin clear clipboard
