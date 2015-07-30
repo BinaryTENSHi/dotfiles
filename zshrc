@@ -68,3 +68,6 @@ export NVM_DIR="/home/$USERNAME/.nvm"
 # git-hub
 source ~/.git-hub/init
 
+# cabal
+export PATH=$PATH:~/.cabal/bin
+
