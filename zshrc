@@ -1,7 +1,6 @@
 source ~/.antigen/antigen.zsh
 
 antigen-bundles <<EOBUNDLES
-colored-man
 sudo
 git
 pip
