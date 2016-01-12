@@ -1,6 +1,7 @@
 # Based on the 'theunraveler' zsh theme
 
 PROMPT='%{$FG[033]%}[%c] %{$reset_color%}'
+[[ $UID -eq 0 ]] && PROMPT='%{$fg[red]%}[%c] %{$reset_color%}'
 
 RPROMPT='%{$FG[033]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%}'
 
