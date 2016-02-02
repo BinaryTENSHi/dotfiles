@@ -1,5 +1,13 @@
 source ~/.antigen/antigen.zsh
 
+# Cygwin
+if [[ `uname -o` == "Cygwin" ]]
+then
+  function -antigen-ensure-repo { }
+
+  alias ccl="echo '' > /dev/clipboard"
+fi
+
 antigen-bundles <<EOBUNDLES
 sudo
 git
@@ -50,9 +58,6 @@ then
   alias spr="sudo apt-get remove"
   alias spar="sudo apt-get autoremove"
 fi
-
-# cygwin clear clipboard
-alias ccl="echo '' > /dev/clipboard"
 
 # because muscle memory
 alias nano=vim
