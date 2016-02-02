@@ -34,7 +34,14 @@ alias sai="sudo aura -Axy"
 alias sau="sudo aura -Axyu"
 alias sar="sudo aura -Rns"
 
-if [[ $kernel != *"ARCH" ]]
+if [[ $kernel == *"gentoo"* ]]
+then
+  alias sps="sudo emerge -s"
+  alias spi="sudo emerge --ask"
+  alias spu="sudo emerge -uDU --with-bdeps=y @world"
+  alias spr="sudo emerge --ask --unmerge"
+  alias spar="sudo emerge --ask --depclean"
+elif [[ $kernel != *"ARCH" ]]
 then
   alias sps="sudo apt-cache search"
   alias spi="sudo apt-get install"
