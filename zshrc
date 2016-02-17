@@ -46,7 +46,7 @@ if [[ $kernel == *"gentoo"* ]]
 then
   alias sps="sudo emerge -s"
   alias spi="sudo emerge --ask"
-  alias spu="sudo emerge -uDU --with-bdeps=y @world"
+  alias spu="sudo emerge --ask -uDU --with-bdeps=y @world"
   alias spr="sudo emerge --ask --unmerge"
   alias spar="sudo emerge --ask --depclean"
 elif [[ $kernel != *"ARCH" ]]
