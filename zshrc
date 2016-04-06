@@ -3,6 +3,7 @@ source ~/.antigen/antigen.zsh
 # Cygwin
 if [[ `uname -o` == "Cygwin" ]]
 then
+  unhash -fm "\-antigen-ensure-repo"
   function -antigen-ensure-repo { }
 
   alias ccl="echo '' > /dev/clipboard"

@@ -2,9 +2,10 @@
   name = BinaryTENSHi
   email = "binarytenshi@gmail.com"
   username = BinaryTENSHi
+  signingkey = D4DD0472
 [core]
-	autocrlf = false
+  autocrlf = input
 [push]
-	default = simple
+  default = simple
 [color]
-	ui = auto
+  ui = auto
