@@ -14,6 +14,7 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
+    ~/.tmux.conf: tmux.conf
 - shell:
     - [mkdir -p ~/tmp, Creating vim temp directory]
     - ['git clone https://github.com/zsh-users/antigen.git ~/.antigen/', Cloning antigen]

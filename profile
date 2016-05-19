@@ -7,3 +7,7 @@ export PANEL_FIFO PANEL_HEIGHT PANEL_FONT_NORMAL PANEL_FONT_JAPANESE
 export PATH=$PATH:~/.config/bspwm/panel
 export PATH=$PATH:~/.cabal/bin
 
+# rvm
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+

@@ -71,3 +71,7 @@ TERM=xterm-256color
 # cabal
 export PATH=$PATH:~/.cabal/bin
 
+# rvm
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
