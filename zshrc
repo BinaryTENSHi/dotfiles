@@ -16,6 +16,7 @@ pip
 command-not-found
 vagrant
 gem
+ssh-agent
 
 robbyrussell/oh-my-zsh lib/
 
