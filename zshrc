@@ -62,8 +62,8 @@ then
 fi
 
 # because muscle memory
-alias nano=vim
-export VISUAL=vim
+alias vim=nvim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # set color terminal

@@ -9,14 +9,15 @@
     ~/.config/compton.conf:
       create: true
       path: compton.conf
+    ~/.config/nvim/init.vim:
+      create: true
+      path: nvim/init.vim
     ~/.profile: profile
     ~/.Xresources: Xresources
-    ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
     ~/.npmrc: npmrc
 - shell:
-    - [mkdir -p ~/tmp, Creating vim temp directory]
     - ['git clone https://github.com/zsh-users/antigen.git ~/.antigen/ | true', Cloning antigen]
-    - ['curl -L https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh', Installing NeoBundle]
+    - ['curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', Install vim-plug]
