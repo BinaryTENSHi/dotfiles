@@ -83,3 +83,6 @@ nnoremap <C-Right> <C-W>>
 " Invoke Neomake on save
 autocmd! BufWritePost * Neomake
 
+" Custom ignore for ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|git'
+
