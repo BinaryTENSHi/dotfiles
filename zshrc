@@ -53,12 +53,12 @@ then
   alias spar="sudo emerge --ask --depclean"
 elif [[ $kernel != *"ARCH" ]]
 then
-  alias sps="sudo apt-cache search"
-  alias spi="sudo apt-get install"
-  alias spu="sudo apt-get update && sudo apt-get upgrade"
-  alias spdu="sudo apt-get update && sudo apt-get dist-upgrade"
-  alias spr="sudo apt-get remove"
-  alias spar="sudo apt-get autoremove"
+  alias sps="sudo apt search"
+  alias spi="sudo apt install"
+  alias spu="sudo apt update && sudo apt upgrade"
+  alias spdu="sudo apt update && sudo apt dist-upgrade"
+  alias spr="sudo apt remove"
+  alias spar="sudo apt autoremove"
 fi
 
 # because muscle memory
