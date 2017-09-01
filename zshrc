@@ -9,7 +9,7 @@ then
   alias ccl="echo '' > /dev/clipboard"
 fi
 
-antigen-bundles <<EOBUNDLES
+antigen bundles <<EOBUNDLES
 sudo
 git
 pip
@@ -25,9 +25,9 @@ zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
-antigen-theme ~/dotfiles/themes/ binary
+antigen theme ~/dotfiles/themes/ binary
 
-antigen-apply
+antigen apply
 
 alias l="ls -laF"
 alias c="clear"
