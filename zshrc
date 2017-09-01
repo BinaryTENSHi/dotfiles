@@ -72,9 +72,10 @@ TERM=xterm-256color
 # cabal
 export PATH=$PATH:~/.cabal/bin
 
+# npm
+export PATH="$PATH:${HOME}/.npm-packages/bin"
+
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# npm
-export PATH="${HOME}/.npm-packages/bin:$PATH"
