@@ -12,10 +12,7 @@ fi
 antigen bundles <<EOBUNDLES
 sudo
 git
-pip
 command-not-found
-vagrant
-gem
 ssh-agent
 
 robbyrussell/oh-my-zsh lib/
