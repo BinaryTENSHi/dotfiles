@@ -80,6 +80,9 @@ export PATH=$PATH:~/.cabal/bin
 # npm
 export PATH="$PATH:${HOME}/.npm-packages/bin"
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

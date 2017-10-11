@@ -6,7 +6,7 @@ call plug#begin('~/.config/nvim/plugins')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neomake/neomake'
@@ -64,7 +64,7 @@ let g:airline_powerline_fonts=1
 let mapleader="\<Space>"
 
 " Set blazing fast shortcuts
-nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>o :FZF<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
@@ -81,8 +81,5 @@ nnoremap <C-Left> <C-W><
 nnoremap <C-Right> <C-W>>
 
 " Invoke Neomake on save
-autocmd! BufWritePost * Neomake
-
-" Custom ignore for ctrlp
-let g:ctrlp_custom_ignore = 'node_modules\|git'
+" autocmd! BufWritePost * Neomake
 
