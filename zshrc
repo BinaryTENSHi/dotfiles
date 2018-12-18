@@ -1,14 +1,5 @@
 source ~/.antigen/antigen.zsh
 
-# Cygwin
-if [[ `uname -o` == "Cygwin" ]]
-then
-  unhash -fm "\-antigen-ensure-repo"
-  function -antigen-ensure-repo { }
-
-  alias ccl="echo '' > /dev/clipboard"
-fi
-
 antigen bundles <<EOBUNDLES
 sudo
 git
@@ -57,13 +48,13 @@ then
   alias spdu="sudo apt update && sudo apt dist-upgrade"
   alias spr="sudo apt remove"
   alias spar="sudo apt autoremove"
-elif [[ $distro == "centos" ]]
+elif [[ $distro == "fedora" ]]
 then
-  alias sps="sudo yum search"
-  alias spi="sudo yum install"
-  alias spu="sudo yum update"
-  alias spr="sudo yum remove"
-  alias spar="sudo yum autoremove"
+  alias sps="sudo dnf search"
+  alias spi="sudo dnf install"
+  alias spu="sudo dnf update"
+  alias spr="sudo dnf remove"
+  alias spar="sudo dnf autoremove"
 fi
 
 # because muscle memory
@@ -73,17 +64,4 @@ export EDITOR=$VISUAL
 
 # set color terminal
 TERM=xterm-256color
-
-# cabal
-export PATH=$PATH:~/.cabal/bin
-
-# npm
-export PATH="$PATH:${HOME}/.npm-packages/bin"
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# rvm
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
