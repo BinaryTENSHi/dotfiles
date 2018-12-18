@@ -4,3 +4,4 @@
     ~/.gitconfig: gitconfig
 - shell:
     - ['git clone https://github.com/zsh-users/antigen.git ~/.antigen/ | true', Cloning antigen]
+    - ['git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.2 | true', Cloning asdf]
