@@ -14,6 +14,7 @@ sudo
 git
 command-not-found
 ssh-agent
+asdf
 
 robbyrussell/oh-my-zsh lib/
 
