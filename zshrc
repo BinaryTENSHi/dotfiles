@@ -1,14 +1,5 @@
 source ~/.antigen/antigen.zsh
 
-# Cygwin
-if [[ `uname -o` == "Cygwin" ]]
-then
-  unhash -fm "\-antigen-ensure-repo"
-  function -antigen-ensure-repo { }
-
-  alias ccl="echo '' > /dev/clipboard"
-fi
-
 antigen bundles <<EOBUNDLES
 sudo
 git
@@ -72,19 +63,6 @@ alias vim=nvim
 export VISUAL=nvim
 export EDITOR=$VISUAL
 
-# set color terminal
-TERM=xterm-256color
-
-# cabal
-export PATH=$PATH:~/.cabal/bin
-
-# npm
-export PATH="$PATH:${HOME}/.npm-packages/bin"
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# rvm
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
