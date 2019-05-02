@@ -12,7 +12,6 @@
     ~/.config/nvim/init.vim:
       create: true
       path: nvim/init.vim
-    ~/.profile: profile
     ~/.Xresources: Xresources
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
