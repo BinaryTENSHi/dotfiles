@@ -1,22 +1,11 @@
 - clean: ['~']
 - link:
-    ~/.config/bspwm:
-      create: true
-      path: bspwm
-    ~/.config/sxhkd:
-      create: true
-      path: sxhkd
-    ~/.config/compton.conf:
-      create: true
-      path: compton.conf
     ~/.config/nvim/init.vim:
       create: true
       path: nvim/init.vim
-    ~/.Xresources: Xresources
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
-    ~/.npmrc: npmrc
 - shell:
     - ['git clone https://github.com/zsh-users/antigen.git ~/.antigen/ | true', Cloning antigen]
     - ['git clone https://github.com/asdf-vm/asdf.git ~/.asdf | true', Cloning asdf]
