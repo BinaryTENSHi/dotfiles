@@ -66,3 +66,6 @@ export EDITOR=$VISUAL
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# local bin
+export PATH="$HOME/.local/bin:$PATH"
+
