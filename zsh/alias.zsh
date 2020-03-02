@@ -1,0 +1,32 @@
+# Git
+alias gcla="git cola"
+
+# Console
+alias lsa="ls -lah"
+alias l="ls -laF"
+alias ll="ls -lh"
+alias la="ls -lAh"
+
+alias c="clear"
+
+# Distro independent package manager
+local distro=$(awk -F= '/^ID=/{gsub(/"/, "", $2); print $2}' /etc/os-release)
+
+if [[ $distro == "arch" ]]
+then
+  alias sps="sudo yay -Ss"
+  alias spi="sudo yay -Sy"
+  alias spu="sudo yay -Syu"
+  alias spr="sudo yay -Rns"
+elif [[ $distro == "ubuntu" ]]
+then
+  alias sps="sudo apt search"
+  alias spi="sudo apt install"
+  alias spu="sudo apt update && sudo apt dist-upgrade"
+  alias spr="sudo apt remove"
+  alias spar="sudo apt autoremove"
+fi
+
+# Systemd
+alias ssctl="sudo systemctl"
+alias usctl="systemctl --user"
