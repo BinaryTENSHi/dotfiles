@@ -83,6 +83,10 @@
                            ("~/org/someday.org" :level . 1)
                            ("~/org/timed.org" :maxlevel . 2)))
 
+;; Start the week on Monday
+(setq org-agenda-start-on-weekday 1)
+(setq calendar-week-start-day 1)
+
 ;; Org custom command
 (setq org-agenda-custom-commands
       '(("w" "At work" tags-todo "work"
