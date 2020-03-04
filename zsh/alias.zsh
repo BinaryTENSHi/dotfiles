@@ -14,10 +14,10 @@ local distro=$(awk -F= '/^ID=/{gsub(/"/, "", $2); print $2}' /etc/os-release)
 
 if [[ $distro == "arch" ]]
 then
-  alias sps="sudo yay -Ss"
-  alias spi="sudo yay -Sy"
-  alias spu="sudo yay -Syu"
-  alias spr="sudo yay -Rns"
+  alias sps="yay -Ss"
+  alias spi="yay -Sy"
+  alias spu="yay -Syu"
+  alias spr="yay -Rns"
 elif [[ $distro == "ubuntu" ]]
 then
   alias sps="sudo apt search"
