@@ -27,8 +27,14 @@
   (interactive)
   (find-file "~/org/tasks.org"))
 
+(defun binary/open-ledger ()
+  "Opens the default ledger file"
+  (interactive)
+  (find-file "~/org/finances.ledger"))
+
 (map! :n "SPC o i" #'binary/open-inbox
-      :n "SPC o t" #'binary/open-tasks)
+      :n "SPC o t" #'binary/open-tasks
+      :n "SPC o f" #'binary/open-ledger)
 
 ;; Org keywords
 (setq org-todo-keywords '((sequence "TODO(t)" "RUNNING(r)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
