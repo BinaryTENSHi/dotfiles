@@ -66,6 +66,18 @@
                                (file+headline "~/org/timed.org" "Work")
                                "* %i%? :work: \n %U")))
 
+;; Org capture for ledger
+(setq org-capture-templates
+      (append '(
+                ;; Generic ledger entry
+                ("l" "Ledger entry" plain
+                 (file "~/org/finances.ledger")
+                 "
+%(org-read-date) %^{Payee}
+    Expenses:%^{Account}  %^{Amount} CHF
+    Assets:%^{Wallet}"
+                 )) org-capture-templates))
+
 ;; Org refile targets
 (setq org-refile-targets '(("~/org/tasks.org" :maxlevel . 3)
                            ("~/org/someday.org" :level . 1)
