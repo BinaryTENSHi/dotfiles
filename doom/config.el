@@ -1,8 +1,7 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Font
-;; Specifying JetBrains Mono as the font messes up the bottom part of an emacsclient. Why? I don't know.
-;;(setq doom-font (font-spec :family "JetBrainsMono" :size 10.0))
+(setq doom-font (font-spec :family "JetBrainsMono" :size 10.0))
 
 ;; Set default work path
 (setq projectile-project-search-path '("~/work"))
@@ -27,14 +26,8 @@
   (interactive)
   (find-file "~/org/tasks.org"))
 
-(defun binary/open-ledger ()
-  "Opens the default ledger file"
-  (interactive)
-  (find-file "~/org/finances.ledger"))
-
 (map! :n "SPC o i" #'binary/open-inbox
-      :n "SPC o t" #'binary/open-tasks
-      :n "SPC o f" #'binary/open-ledger)
+      :n "SPC o t" #'binary/open-tasks)
 
 ;; Org keywords
 (setq org-todo-keywords '((sequence "TODO(t)" "RUNNING(r)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
@@ -65,18 +58,6 @@
                               ("W" "Work [timed]" entry
                                (file+headline "~/org/timed.org" "Work")
                                "* %i%? :work: \n %U")))
-
-;; Org capture for ledger
-(setq org-capture-templates
-      (append '(
-                ;; Generic ledger entry
-                ("l" "Ledger entry" plain
-                 (file "~/org/finances.ledger")
-                 "
-%(org-read-date) %^{Payee}
-    Expenses:%^{Account}  %^{Amount} CHF
-    Assets:%^{Wallet}"
-                 )) org-capture-templates))
 
 ;; Org refile targets
 (setq org-refile-targets '(("~/org/tasks.org" :maxlevel . 3)
