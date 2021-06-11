@@ -5,11 +5,9 @@ endif
 call plug#begin('~/.config/nvim/plugins')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'fishbullet/deoplete-ruby'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'neomake/neomake'
 
 call plug#end()
 
@@ -80,6 +78,6 @@ nnoremap <C-Down> <C-W>+
 nnoremap <C-Left> <C-W><
 nnoremap <C-Right> <C-W>>
 
-" Invoke Neomake on save
-" autocmd! BufWritePost * Neomake
+" Enable deoplete
+let g:deoplete#enable_at_startup = 1
 
