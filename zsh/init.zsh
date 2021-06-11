@@ -27,5 +27,8 @@ source "$SCRIPTDIR/external.zsh"
 # Load aliases
 source "$SCRIPTDIR/alias.zsh"
 
+# Load additional PATHs
+source "$SCRIPTDIR/path.zsh"
+
 # Load theme
 zinit snippet "$SCRIPTDIR/binary.zsh-theme"

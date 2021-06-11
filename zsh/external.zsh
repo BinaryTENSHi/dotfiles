@@ -8,14 +8,38 @@ zinit \
     atpull'%atclone' \
     pick"direnv" \
     src="zhook.zsh" \
-    for direnv/direnv
+    for @direnv/direnv
 
 # fzf
 # Fuzzy finder
 zinit \
     from"gh-r" \
+    as"program" \
     sbin"fzf" \
-    for junegunn/fzf-bin
+    for @junegunn/fzf
+
+# rg
+# Ripgrep
+zinit \
+    from"gh-r" \
+    as"program" \
+    sbin"ripgrep*/rg" \
+    for @BurntSushi/ripgrep
+
+# fd
+# Fast find
+zinit \
+    from"gh-r" \
+    as"program" \
+    sbin"fd*/fd" \
+    for @sharkdp/fd
+
+# Evans
+zinit \
+    from"gh-r" \
+    as"program" \
+    sbin"evans" \
+    for @ktr0731/evans
 
 # Completion and history search
 zinit for \
