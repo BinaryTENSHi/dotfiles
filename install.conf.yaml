@@ -1,8 +1,9 @@
 - clean: ['~']
 - link:
-    ~/.config/nvim/init.vim:
+    ~/.config/nvim/init.lua:
       create: true
-      path: nvim/init.vim
+      path: nvim/init.lua
+    ~/.config/nvim/lua: nvim/lua
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
@@ -11,4 +12,3 @@
     - ['(mkdir ~/.zinit && git clone https://github.com/zdharma/zinit.git ~/.zinit/bin) | true', Cloning zinit]
     - ['git clone https://github.com/hlissner/doom-emacs ~/.emacs.d | true', Cloning doom emacs]
     - ['git clone https://github.com/asdf-vm/asdf.git ~/.asdf | true', Cloning asdf]
-    - ['curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', Install vim-plug]
