@@ -44,7 +44,23 @@ vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when th
 require('plugins')
 
 -- Shortcuts
-vim.api.nvim_set_keymap('n', '<Leader>o', ':Telescope find_files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true })
+function nnoremap(short, action)
+  vim.api.nvim_set_keymap('n', short, action, { noremap = true, silent = true })
+end
 
+-- Fast shortcuts
+nnoremap('<Leader>o', ':Telescope find_files<CR>')
+nnoremap('<Leader>w', ':w<CR>')
+nnoremap('<Leader>q', ':q<CR>')
+
+-- Simpler window switching
+nnoremap('<C-J>', '<C-W><C-J>')
+nnoremap('<C-K>', '<C-W><C-K>')
+nnoremap('<C-L>', '<C-W><C-L>')
+nnoremap('<C-H>', '<C-W><C-H>')
+
+-- Simpler window resizing
+nnoremap('<C-Up>', '<C-W>-')
+nnoremap('<C-Down>', '<C-W>+')
+nnoremap('<C-Left>', '<C-W><')
+nnoremap('<C-Right>', '<C-W>>')
