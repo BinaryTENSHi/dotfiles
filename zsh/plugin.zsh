@@ -1,6 +1,6 @@
 # $PATH wrapper
 # Must be loaded synchronously: other scripts use the sbin ice
-zinit light zinit-zsh/z-a-bin-gem-node
+zinit light NorthIsUp/z-a-bin-gem-node
 
 # ZSH completions
 zinit ice wait blockf lucid \
@@ -10,7 +10,7 @@ zinit light zsh-users/zsh-completions
 # Syntax highlighting
 zinit ice wait lucid \
     atinit"zpcompinit; zpcdreplay"
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 # History substring search
 zinit ice wait lucid
