@@ -41,6 +41,19 @@ zinit \
     sbin"evans" \
     for @ktr0731/evans
 
+# Dust
+zinit \
+    from"gh-r" \
+    as"program" \
+    sbin"dust*/dust" \
+    for @bootandy/dust
+
+# Hugo
+zinit \
+    from"gh-r" \
+    as"program" \
+    for @gohugoio/hugo
+
 # Completion and history search
 zinit for \
     https://github.com/junegunn/fzf/raw/master/shell/completion.zsh \
