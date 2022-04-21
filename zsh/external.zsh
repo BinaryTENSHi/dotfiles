@@ -34,25 +34,12 @@ zinit \
     sbin"fd*/fd" \
     for @sharkdp/fd
 
-# Evans
-zinit \
-    from"gh-r" \
-    as"program" \
-    sbin"evans" \
-    for @ktr0731/evans
-
 # Dust
 zinit \
     from"gh-r" \
     as"program" \
     sbin"dust*/dust" \
     for @bootandy/dust
-
-# Hugo
-zinit \
-    from"gh-r" \
-    as"program" \
-    for @gohugoio/hugo
 
 # Completion and history search
 zinit for \
