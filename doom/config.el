@@ -1,7 +1,7 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 ;; Font
-(setq doom-font (font-spec :family "JetBrainsMono" :size 10.0))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 12))
 
 ;; Theme
 (setq doom-theme 'doom-dracula)
