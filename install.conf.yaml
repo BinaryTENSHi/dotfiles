@@ -3,6 +3,9 @@
     ~/.config/nvim/init.vim:
       create: true
       path: nvim/init.vim
+    ~/.config/systemd/user:
+      create: true
+      path: systemd/user
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
