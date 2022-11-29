@@ -6,6 +6,15 @@
 ;; Theme
 (setq doom-theme 'doom-dracula)
 
+;; Configure home screen
+(setq fancy-splash-image (concat doom-user-dir "splash.jpg"))
+(remove-hook! '+doom-dashboard-functions
+  #'doom-dashboard-widget-shortmenu
+  #'doom-dashboard-widget-footer)
+
+(setq-hook! '+doom-dashboard-mode-hook
+  evil-normal-state-cursor (list nil))
+
 ;; Set default work path
 (setq projectile-project-search-path '("~/work"))
 
