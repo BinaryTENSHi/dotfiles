@@ -22,6 +22,20 @@
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
 
+;; Set org-roam templates
+(defun my/org-roam-meeting-filename ()
+  (setq my-org-meeting--date (org-read-date "Date: " t))
+  (setq my-org-meeting--timestamp (format-time-string "%Y%m%d" my-org-meeting--date))
+  my-org-meeting--timestamp)
+
+(setq org-roam-capture-templates '(("d" "default" plain "%?"
+                                    :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+                                    :unnarrowed t)
+                                   ("m" "meeting" plain (file "template/meeting.org")
+                                    :target (file "meeting/%(my/org-roam-meeting-filename)-${slug}.org")
+                                    :unnarrowed t
+                                    )))
+
 (after! org
   (setq org-attach-store-link-p 'attached))
 
