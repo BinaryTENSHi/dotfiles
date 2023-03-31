@@ -5,3 +5,6 @@
 ;; (package! some-package)
 ;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
+
+(unpin! org-roam)
+(package! org-roam-ui)
