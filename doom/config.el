@@ -22,3 +22,5 @@
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
 
+(after! org
+  (setq org-attach-store-link-p 'attached))
