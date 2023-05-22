@@ -50,6 +50,16 @@
 (after! org
   (setq org-attach-store-link-p 'attached))
 
+;; Elfeed
+(after! elfeed
+  (setq elfeed-search-filter "@1-month-ago"))
+
+(map! :map elfeed-mode-map
+      :leader
+      (:prefix ("e" . "elfeed")
+       :desc "Open elfeed" "e" #'elfeed
+       :desc "Update elfeed" "u" #'elfeed-update))
+
 ;; org-roam-ui
 (use-package! websocket
     :after org-roam)
