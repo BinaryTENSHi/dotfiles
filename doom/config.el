@@ -35,6 +35,17 @@
                                     :target (file "meeting/%(my/org-roam-meeting-filename)-${slug}.org")
                                     :unnarrowed t
                                     )))
+;; YouTube Link insertion
+(defun my/org-roam-insert-youtube ()
+  (interactive)
+  (let* ((id (read-from-minibuffer "YouTube ID:"))
+         (title (shell-command-to-string (format "yt-dlp --print filename -o '%%(title)s [%%(uploader)s]' '%s' 2>/dev/null" id)))
+         ;; Trim newline from end
+         (title (string-trim title)))
+    (save-excursion
+      (org-insert-link nil (format "youtube:%s" id) title)
+      (forward-line 1))
+    ))
 
 (after! org
   (setq org-attach-store-link-p 'attached))
