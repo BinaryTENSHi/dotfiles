@@ -6,6 +6,9 @@
 ;; Theme
 (setq doom-theme 'doom-dracula)
 
+;; Disable exit prompt
+(setq confirm-kill-emacs nil)
+
 ;; Configure home screen
 (setq fancy-splash-image (concat doom-user-dir "splash.jpg"))
 (remove-hook! '+doom-dashboard-functions
