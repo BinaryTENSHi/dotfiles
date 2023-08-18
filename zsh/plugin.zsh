@@ -1,17 +1,14 @@
 # $PATH wrapper
 # Must be loaded synchronously: other scripts use the sbin ice
-zinit light NorthIsUp/z-a-bin-gem-node
-
-# ZSH completions
-zinit ice wait blockf lucid \
-    atpull'zinit creinstall -q .'
-zinit light zsh-users/zsh-completions
+zinit load NorthIsUp/z-a-bin-gem-node
 
 # Syntax highlighting
-zinit ice wait lucid \
-    atinit"zpcompinit; zpcdreplay"
-zinit light zdharma-continuum/fast-syntax-highlighting
+# ZSH completions
+zinit lucid for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma-continuum/fast-syntax-highlighting \
+  blockf atpull'zinit creinstall -q .' \
+      zsh-users/zsh-completions
 
 # History substring search
-zinit ice wait lucid
-zinit light zsh-users/zsh-history-substring-search
+zinit load zsh-users/zsh-history-substring-search
