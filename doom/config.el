@@ -4,7 +4,8 @@
 (setq doom-font (font-spec :family "JetBrains Mono" :size 12))
 
 ;; Theme
-(setq doom-theme 'doom-dracula)
+(setq catppuccin-enlarge-headings nil)
+(setq doom-theme 'catppuccin)
 
 ;; Disable exit prompt
 (setq confirm-kill-emacs nil)
