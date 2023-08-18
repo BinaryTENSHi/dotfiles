@@ -7,6 +7,9 @@
 (setq catppuccin-enlarge-headings nil)
 (setq doom-theme 'catppuccin)
 
+(setq native-comp-async-report-warnings-errors nil)
+(setq warning-minimum-level :error)
+
 ;; Disable exit prompt
 (setq confirm-kill-emacs nil)
 
