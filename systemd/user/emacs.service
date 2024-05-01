@@ -3,9 +3,14 @@ Description=Emacs text editor
 Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/emacs --daemon
-ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Type=notify
+ExecStart=/usr/local/bin/emacs --fg-daemon
+#ExecStop=/usr/local/bin/emacsclient --eval "(kill-emacs)"
+
+# Emacs will exit with status 15 after having received SIGTERM, which
+# is the default "KillSignal" value systemd uses to stop services.
+SuccessExitStatus=15
+
 Environment=SSH_AUTH_SOCK=%t/keyring/ssh
 Restart=on-failure
 
