@@ -1,5 +1,6 @@
 # Load OMZ library
 zinit lucid for \
+    OMZL::async_prompt.zsh \
     OMZL::clipboard.zsh \
     OMZL::completion.zsh \
     OMZL::git.zsh \
