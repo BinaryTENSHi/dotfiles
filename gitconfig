@@ -9,3 +9,9 @@
   default = simple
 [color]
   ui = auto
+[init]
+  defaultBranch = main
+[rebase]
+  autoSquash = on
+[fetch]
+  prune = on
