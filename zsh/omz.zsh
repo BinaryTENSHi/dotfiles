@@ -13,8 +13,7 @@ zinit lucid for \
 # Load ohmyzsh plugins
 zinit lucid for \
     OMZP::git \
-    OMZP::ssh-agent \
-    OMZP::asdf
+    OMZP::ssh-agent
 
 # Load completions
 zinit lucid for \
