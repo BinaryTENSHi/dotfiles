@@ -21,3 +21,6 @@ fi
 # Systemd
 alias ssctl="sudo systemctl"
 alias usctl="systemctl --user"
+
+# Editor
+alias vim="TERM=xterm-emacs command emacsclient -nw"
