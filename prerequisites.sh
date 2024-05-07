@@ -27,5 +27,21 @@ if [[ ! -d "$HOME/.config/tmux/plugins/tpm" ]]; then
         "$HOME/.config/tmux/plugins/tpm"
 fi
 
+# Ensure Homebrew is installed
+HOMEBREW=""
+SYSTEM=$(uname)
+if [[ $SYSTEM == "Linux" ]]; then
+    HOMEBREW="/home/linuxbrew/.linuxbrew"
+elif [[ $SYSTEM == "Darwin" ]]; then
+    HOMEBREW="/opt/homebrew"
+else
+    echo "Unhandled: $SYSTEM"
+    exit 1
+fi
+
+if [[ ! -d "$HOMEBREW" ]]; then
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 # Install terminfo
 tic -x -o "$HOME/.terminfo" "$HOME/dotfiles/misc/xterm-emacs.src"
