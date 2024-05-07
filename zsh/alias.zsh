@@ -1,14 +1,3 @@
-# Git
-alias gcla="git cola"
-
-# Console
-alias lsa="ls -lah"
-alias l="ls -laF"
-alias ll="ls -lh"
-alias la="ls -lAh"
-
-alias c="clear"
-
 if [[ -f "/etc/os-release" ]]; then
   # Distro independent package manager
   local distro=$(awk -F= '/^ID=/{gsub(/"/, "", $2); print $2}' /etc/os-release)
