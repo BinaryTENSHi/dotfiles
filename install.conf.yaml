@@ -1,4 +1,6 @@
 - clean: ['~']
+- shell:
+    - ['~/dotfiles/prerequisites.sh', Installing prerequisites]
 - link:
     ~/.config/systemd/user:
       create: true
@@ -9,11 +11,4 @@
       create: true
       path: tmux.conf
     ~/.doom.d: doom
-- shell:
-    - ['sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | true', Cloning oh-my-zsh]
-    - ['git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting | true', Cloning zsh-syntax-highlighting]
-    - ['git clone https://github.com/hlissner/doom-emacs ~/.config/emacs | true', Cloning doom emacs]
-    - ['git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm | true', Cloning tpm]
-    - ['tic -x -o ~/.terminfo ~/dotfiles/misc/xterm-emacs.src', Install xterm-emacs terminfo]
-- link:
     ~/.oh-my-zsh/themes/binary.zsh-theme: zsh/binary.zsh-theme
