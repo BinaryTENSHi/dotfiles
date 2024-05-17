@@ -2,8 +2,13 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="binary"
 
+# Use legacy completion for docker
+zstyle ':omz:plugins:docker' legacy-completion yes
+
 plugins=(
     brew
+    direnv
+    docker
     fzf
     git
     history-substring-search
@@ -11,13 +16,14 @@ plugins=(
     zsh-syntax-highlighting
 )
 
+# Include completions from brew installation
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+# Let's go oh-my-zsh!
 source "$ZSH/oh-my-zsh.sh"
 
 # Source custom shell aliases
 source "$HOME/dotfiles/zsh/alias.zsh"
-
-# Add ~/.local/bin to PATH
-export PATH="$HOME/.local/bin:$PATH"
 
 # Do not auto update Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
