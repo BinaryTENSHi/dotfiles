@@ -11,6 +11,29 @@
   :config
   (load-theme 'catppuccin :no-confirm))
 
+;; Setup nerd-icons
+(use-package nerd-icons
+  :ensure t)
+
+(use-package nerd-icons-completion
+  :ensure t
+  :after marginalia
+  :hook
+  (marginalia-mode . nerd-icons-completion-marginalia-setup)
+  :config
+  (nerd-icons-completion-mode))
+
+(use-package nerd-icons-corfu
+  :ensure t
+  :after corfu
+  :config
+  (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
+
+(use-package nerd-icons-dired
+  :ensure t
+  :hook
+  (dired-mode . nerd-icons-dired-mode))
+
 ;; Setup modeline
 (use-package doom-modeline
   :ensure t
@@ -82,6 +105,22 @@
   :ensure t
   :init
   (which-key-mode 1))
+
+;; Setup dashboard
+(use-package dashboard
+  :ensure t
+  :custom
+  (dashboard-startup-banner (locate-user-emacs-file "resources/banner.jpg"))
+  (dashboard-banner-logo-title "HiRyS")
+  (dashboard-display-icons-p t)
+  (dashboard-icon-type 'nerd-icons)
+  (dashboard-set-file-icons t)
+  (dashboard-set-heading-icons t)
+  :hook
+  (elpaca-after-init . dashboard-insert-startupify-lists)
+  (elpaca-after-init . dashboard-initialize)
+  :config
+  (dashboard-setup-startup-hook))
 
 ;; Setup magit
 (use-package transient
