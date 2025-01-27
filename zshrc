@@ -17,7 +17,17 @@ plugins=(
 )
 
 # Include completions from brew installation
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+HOMEBREW=""
+SYSTEM=$(uname)
+if [[ $SYSTEM == "Linux" ]]; then
+    HOMEBREW="/home/linuxbrew/.linuxbrew"
+elif [[ $SYSTEM == "Darwin" ]]; then
+    HOMEBREW="/opt/homebrew"
+else
+    echo "Unhandled: $SYSTEM"
+    exit 1
+fi
+FPATH="$HOMEBREW/share/zsh/site-functions:${FPATH}"
 
 # Let's go oh-my-zsh!
 source "$ZSH/oh-my-zsh.sh"
