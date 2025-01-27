@@ -12,3 +12,6 @@
       path: tmux.conf
     ~/.doom.d: doom
     ~/.oh-my-zsh/themes/binary.zsh-theme: zsh/binary.zsh-theme
+    ~/.config/emacs-next:
+      create: true
+      path: emacs
