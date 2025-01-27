@@ -59,6 +59,30 @@
   :init
   (global-corfu-mode 1))
 
+;; Setup helpful
+(use-package helpful
+  :ensure t)
+
+;; Setup marginalia
+(use-package marginalia
+  :ensure t
+  :init
+  (marginalia-mode 1))
+
+;; Setup orderless
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-defaults nil)
+  (completion-category-overrides nil))
+
+;; Setup which-key
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode 1))
+
 ;; Setup magit
 (use-package transient
   :ensure t)
