@@ -35,6 +35,30 @@
   :config
   (evil-collection-init))
 
+;; Setup VERTical Interactgive COOmpletion (vertico)
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode 1))
+
+;; Setup COmpletion in Region FUnction (corfu)
+(use-package corfu
+  :ensure t
+  :bind
+  ;; Use TAB for cycling
+  (:map corfu-map
+    ("TAB" . corfu-next)
+    ([tab] . corfu-next)
+    ("S-TAB" . corfu-previous)
+    ([backtab] . corfu-previous))
+  :custom
+  (corfu-auto t)
+  (corfu-cycle t)
+  (corfu-preselect 'prompt)
+  (corfu-auto-prefix 2)
+  :init
+  (global-corfu-mode 1))
+
 ;; Setup magit
 (use-package transient
   :ensure t)
