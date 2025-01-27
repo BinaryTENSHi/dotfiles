@@ -2,12 +2,18 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file :no-error-if-file-is-missing)
 
+;; Setup font
+(let ((font (font-spec :family "JetBrains Mono" :size 12)))
+  (set-face-attribute 'default nil :width 'normal :weight 'normal :slant 'normal :font font))
+
 ;; Setup elpaca
 (load (locate-user-emacs-file "lisp/elpaca.el"))
 
 ;; Setup theme
 (use-package catppuccin-theme
   :ensure t
+  :custom
+  (catppuccin-enlarge-headings nil)
   :config
   (load-theme 'catppuccin :no-confirm))
 
@@ -130,6 +136,16 @@
   :config
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode 1))
+
+;; Setup lsp-mode
+(use-package lsp-mode
+  :ensure t
+  :commands (lsp lsp-deferred)
+  :custom
+  (lsp-keymap-prefix "C-c l")
+  :hook
+  (c-ts-mode . lsp-deferred)
+  (c++-ts-mode . lsp-deferred))
 
 ;; Setup magit
 (use-package transient
