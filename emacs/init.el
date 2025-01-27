@@ -11,6 +11,12 @@
   :config
   (load-theme 'catppuccin :no-confirm))
 
+;; Setup modeline
+(use-package doom-modeline
+  :ensure t
+  :init
+  (doom-modeline-mode 1))
+
 ;; Setup evil
 (use-package evil
   :ensure t
