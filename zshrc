@@ -9,6 +9,7 @@ plugins=(
     brew
     direnv
     docker
+    eza
     fzf
     git
     history-substring-search
