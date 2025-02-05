@@ -29,6 +29,14 @@
 (after! persp-mode
   (setq persp-emacsclient-init-frame-behaviour-override "main"))
 
+;; Set org and org-roam directory
+(setq org-directory (concat
+                     (getenv "HOME")
+                     (cond ((string-equal system-type "gnu/linux") "/OneDrive/Notes")
+                           ((string-equal system-type "darwin") "/OneDrive - Binary Network/Notes")
+                           (t (error (format "Unknown system-type: %s" system-type))))))
+(setq org-roam-directory org-directory)
+
 ;; Set org-roam templates
 (defun my/org-roam-meeting-filename ()
   (setq my-org-meeting--date (org-read-date "Date: " t))
@@ -69,16 +77,16 @@
 
 ;; org-roam-ui
 (use-package! websocket
-    :after org-roam)
+  :after org-roam)
 
 (use-package! org-roam-ui
-    :after org-roam ;; or :after org
-;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
-;;         a hookable mode anymore, you're advised to pick something yourself
-;;         if you don't care about startup time, use
-;;  :hook (after-init . org-roam-ui-mode)
-    :config
-    (setq org-roam-ui-sync-theme t
-          org-roam-ui-follow t
-          org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
+  :after org-roam ;; or :after org
+  ;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+  ;;         a hookable mode anymore, you're advised to pick something yourself
+  ;;         if you don't care about startup time, use
+  ;;  :hook (after-init . org-roam-ui-mode)
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
