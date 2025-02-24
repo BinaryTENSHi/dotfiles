@@ -1,15 +1,10 @@
 ;; -*- no-byte-compile: t; -*-
-;;; ~/.doom.d/packages.el
+;;; $DOOMDIR/packages.el
 
-;;; Examples:
-;; (package! some-package)
-;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
-;; (package! builtin-package :disable t)
-
-(unpin! org)
-(unpin! org-roam)
-(unpin! forge)
-(package! org-roam-ui)
+;; Theme
 (package! catppuccin-theme)
+;; LanguageTool integration
+(package! lsp-ltex)
 
+;; Disable ccls to force clangd
 (package! ccls :disable t)
