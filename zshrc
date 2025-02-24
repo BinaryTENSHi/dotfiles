@@ -38,3 +38,9 @@ source "$HOME/dotfiles/zsh/alias.zsh"
 
 # Do not auto update Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# Include cargo
+source "$HOME/.cargo/env"
+
+# Include local bin
+export PATH="$HOME/.local/bin:$PATH"
