@@ -7,6 +7,11 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+# Ensure atuin is installed
+if [[ ! -d "$HOME/.atuin" ]]; then
+    bash -c "$(curl -fsSL https://setup.atuin.sh)"
+fi
+
 # Ensure zsh-syntax-highlighting is cloned
 if [[ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \

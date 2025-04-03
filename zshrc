@@ -44,3 +44,6 @@ source "$HOME/.cargo/env"
 
 # Include local bin
 export PATH="$HOME/.local/bin:$PATH"
+
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh --disable-up-arrow)"
