@@ -25,10 +25,6 @@
 ;; Set default work path
 (setq projectile-project-search-path '("~/work"))
 
-;; Do not create an anonymous session #n when launching emacsclient
-(after! persp-mode
-  (setq persp-emacsclient-init-frame-behaviour-override "main"))
-
 ;; Set org and org-roam directory
 (setq org-directory (concat
                      (getenv "HOME")
@@ -54,7 +50,7 @@
 (defun my/org-roam-insert-youtube ()
   (interactive)
   (let* ((id (read-from-minibuffer "YouTube ID:"))
-         (title (shell-command-to-string (format "yt-dlp --print filename -o '%%(title)s [%%(uploader)s]' '%s' 2>/dev/null" id)))
+         (title (shell-command-to-string (format "yt-dlp --print filename -o '%%(title)s (%%(uploader)s)' '%s' 2>/dev/null" id)))
          ;; Trim newline from end
          (title (string-trim title)))
     (save-excursion
@@ -74,4 +70,8 @@
       (:prefix ("e" . "elfeed")
        :desc "Open elfeed" "e" #'elfeed
        :desc "Update elfeed" "u" #'elfeed-update))
+
+;; Tramp
+(after! tramp
+  (add-to-list 'tramp-remote-path 'tramp-own-remote-path))
 
