@@ -1,6 +1,12 @@
-*~
+.cache/
+.lsp-session-v1
 auto-save-list/
 eln-cache/
+elpa/
 elpaca/
+history
+projects
+recentf
+tramp
 transient/
 tree-sitter/

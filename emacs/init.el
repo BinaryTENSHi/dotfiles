@@ -1,156 +1,37 @@
-;; Redirect custom.el
-(setq custom-file (locate-user-emacs-file "custom.el"))
-(load custom-file :no-error-if-file-is-missing)
+;;; package --- Yuu's Emacs configuration -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
-;; Setup font
-(let ((font (font-spec :family "JetBrains Mono" :size 12)))
-  (set-face-attribute 'default nil :width 'normal :weight 'normal :slant 'normal :font font))
+;; Always load the newer version of a file (el/elc)
+(setq load-prefer-newer t)
 
-;; Setup elpaca
-(load (locate-user-emacs-file "lisp/elpaca.el"))
+;; Add the modules folder to the load path so we can (require) them
+(add-to-list 'load-path (locate-user-emacs-file "modules"))
+;; Also add it to the flymake load path
+(setq elisp-flymake-byte-compile-load-path load-path)
 
-;; Setup theme
-(use-package catppuccin-theme
-  :ensure t
-  :custom
-  (catppuccin-enlarge-headings nil)
-  :config
-  (load-theme 'catppuccin :no-confirm))
+;; Trust everything in here
+;; Note: this doesn't work due to symlinks, I think?
+;; (add-to-list 'trusted-content (expand-file-name (locate-user-emacs-file "./")))
+;; (add-to-list 'trusted-content (concat (getenv "HOME") "/dotfiles/emacs/"))
+;; (setq trusted-content :all)
 
-;; Setup nerd-icons
-(use-package nerd-icons
-  :ensure t)
+;; Initialize the package manager (elpaca)
+(require 'yuu-emacs-package)
 
-(use-package nerd-icons-completion
-  :ensure t
-  :after marginalia
-  :hook
-  (marginalia-mode . nerd-icons-completion-marginalia-setup)
-  :config
-  (nerd-icons-completion-mode))
+;; Configure keybinds (general.el)
+(require 'yuu-emacs-keybinds)
 
-(use-package nerd-icons-corfu
-  :ensure t
-  :after corfu
-  :config
-  (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
+;; Configure some base settings
+(require 'yuu-emacs-base)
 
-(use-package nerd-icons-dired
-  :ensure t
-  :hook
-  (dired-mode . nerd-icons-dired-mode))
+;; Configure theme and everything graphical
+(require 'yuu-emacs-theme)
 
-;; Setup modeline
-(use-package doom-modeline
-  :ensure t
-  :init
-  (doom-modeline-mode 1))
+;; Configure org-mode
+(require 'yuu-emacs-org)
 
-;; Setup evil
-(use-package evil
-  :ensure t
-  :custom
-  ;; required for evil-collection
-  (evil-want-integration t)
-  (evil-want-keybinding nil)
+;; Configuration everything programming related
+(require 'yuu-emacs-prog)
 
-  (evil-want-C-u-scroll t)
-  :config
-  (evil-mode 1))
-
-(use-package evil-collection
-  :ensure t
-  :after evil
-  :config
-  (evil-collection-init))
-
-;; Setup VERTical Interactgive COOmpletion (vertico)
-(use-package vertico
-  :ensure t
-  :init
-  (vertico-mode 1))
-
-;; Setup COmpletion in Region FUnction (corfu)
-(use-package corfu
-  :ensure t
-  :bind
-  ;; Use TAB for cycling
-  (:map corfu-map
-    ("TAB" . corfu-next)
-    ([tab] . corfu-next)
-    ("S-TAB" . corfu-previous)
-    ([backtab] . corfu-previous))
-  :custom
-  (corfu-auto t)
-  (corfu-cycle t)
-  (corfu-preselect 'prompt)
-  (corfu-auto-prefix 2)
-  :init
-  (global-corfu-mode 1))
-
-;; Setup helpful
-(use-package helpful
-  :ensure t)
-
-;; Setup marginalia
-(use-package marginalia
-  :ensure t
-  :init
-  (marginalia-mode 1))
-
-;; Setup orderless
-(use-package orderless
-  :ensure t
-  :custom
-  (completion-styles '(orderless basic))
-  (completion-category-defaults nil)
-  (completion-category-overrides nil))
-
-;; Setup which-key
-(use-package which-key
-  :ensure t
-  :init
-  (which-key-mode 1))
-
-;; Setup dashboard
-(use-package dashboard
-  :ensure t
-  :custom
-  (dashboard-startup-banner (locate-user-emacs-file "resources/banner.jpg"))
-  (dashboard-banner-logo-title "HiRyS")
-  (dashboard-display-icons-p t)
-  (dashboard-icon-type 'nerd-icons)
-  (dashboard-set-file-icons t)
-  (dashboard-set-heading-icons t)
-  :hook
-  (elpaca-after-init . dashboard-insert-startupify-lists)
-  (elpaca-after-init . dashboard-initialize)
-  :config
-  (dashboard-setup-startup-hook))
-
-;; Setup tree-sitter definitions
-(use-package treesit-auto
-  :ensure t
-  :custom
-  (treesit-auto-install 'prompt)
-  :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode 1))
-
-;; Setup lsp-mode
-(use-package lsp-mode
-  :ensure t
-  :commands (lsp lsp-deferred)
-  :custom
-  (lsp-keymap-prefix "C-c l")
-  :hook
-  (c-ts-mode . lsp-deferred)
-  (c++-ts-mode . lsp-deferred))
-
-;; Setup magit
-(use-package transient
-  :ensure t)
-
-(use-package magit
-  :after transient
-  :ensure t)
+;;; init.el ends here
