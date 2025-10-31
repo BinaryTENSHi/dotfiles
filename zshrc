@@ -13,6 +13,7 @@ plugins=(
     fzf
     git
     history-substring-search
+    mise
     ssh-agent
     zsh-syntax-highlighting
 )
