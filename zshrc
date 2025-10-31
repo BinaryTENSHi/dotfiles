@@ -2,8 +2,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="binary"
 
-# Use legacy completion for docker
-zstyle ':omz:plugins:docker' legacy-completion yes
+# Use option stacking for docker
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 plugins=(
     brew
