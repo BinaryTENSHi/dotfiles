@@ -82,7 +82,7 @@ REPORT-FN is the callback to send all diagnostics back to flymake."
   :ensure t
   :after (eglot)
   :hook
-  (go-mode . eglot-ensure)
+  (go-ts-mode . eglot-ensure)
   ;; Automatically add the hook as eglot overrides the flymake hooks
   (eglot-managed-mode . yuu/golangci-lint-setup-flymake-backend))
 
