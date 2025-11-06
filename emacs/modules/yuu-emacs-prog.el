@@ -22,7 +22,7 @@
   (add-to-list 'treesit-language-source-alist '(cpp "https://github.com/tree-sitter/tree-sitter-cpp")))
 
 (use-package flymake
-  :ensure t
+  :ensure (:wait t)
   :hook (emacs-lisp-mode . flymake-mode)
   :custom
   ;; Show diagnostics it in the buffer directly
@@ -72,6 +72,7 @@
   (require 'smartparens-config))
 
 (require 'yuu-emacs-prog-cpp)
+(require 'yuu-emacs-prog-go)
 (require 'yuu-emacs-prog-markdown)
 (require 'yuu-emacs-prog-rust)
 
