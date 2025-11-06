@@ -72,6 +72,7 @@
   (require 'smartparens-config))
 
 (require 'yuu-emacs-prog-cpp)
+(require 'yuu-emacs-prog-markdown)
 (require 'yuu-emacs-prog-rust)
 
 (provide 'yuu-emacs-prog)
