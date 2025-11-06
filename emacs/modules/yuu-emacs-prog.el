@@ -55,6 +55,7 @@
   :ensure t
   :after (jsonrpc flymake)
   :custom
+  (eglot-autoshutdown t)
   (eglot-inlay-hints-mode t)
   (eglot-code-action-indications '(mode-line))
   :config
