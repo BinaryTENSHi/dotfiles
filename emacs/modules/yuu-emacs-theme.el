@@ -1,4 +1,4 @@
-;;; package --- Theme configuration
+;;; package --- Theme configuration -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

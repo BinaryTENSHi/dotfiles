@@ -1,4 +1,4 @@
-;;; package --- org-mode configuration
+;;; package --- org-mode configuration -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

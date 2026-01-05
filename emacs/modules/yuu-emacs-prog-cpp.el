@@ -1,4 +1,4 @@
-;;; package --- Programming: C/C++
+;;; package --- Programming: C/C++ -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

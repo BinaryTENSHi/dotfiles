@@ -1,4 +1,4 @@
-;;; package --- Programming: Rust
+;;; package --- Programming: Rust -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

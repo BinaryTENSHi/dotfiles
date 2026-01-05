@@ -1,4 +1,4 @@
-;;; package --- Base configuration
+;;; package --- Base configuration -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

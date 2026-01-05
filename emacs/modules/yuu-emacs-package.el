@@ -1,4 +1,4 @@
-;;; package --- Elpaca configuration
+;;; package --- Elpaca configuration -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

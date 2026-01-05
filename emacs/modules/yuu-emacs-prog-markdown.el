@@ -1,4 +1,4 @@
-;;; package --- Programming: Markdown
+;;; package --- Programming: Markdown -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

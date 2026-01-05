@@ -1,4 +1,4 @@
-;;; package --- Keybinding configuration
+;;; package --- Keybinding configuration -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 
