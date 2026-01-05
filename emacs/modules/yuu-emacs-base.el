@@ -123,5 +123,14 @@ With argument ARG, do this that many times."
   :init
   (global-corfu-mode 1))
 
+;; Setup Embark
+(use-package embark
+  :ensure t
+  :bind
+  (("C-." . embark-act)))
+
+(use-package embark-consult
+  :ensure t)
+
 (provide 'yuu-emacs-base)
 ;;; yuu-emacs-base.el ends here
