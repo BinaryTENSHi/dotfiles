@@ -26,7 +26,15 @@
   ;; By default Emacs distinguishes between automatic and manual window switching.
   ;; If you effect a window switch yourself with C-x b, it’s manual — and exempt from any display action rules you create yourself.
   ;; Now Emacs treats manual buffer switching the same as programmatic switching.
-  (switch-to-buffer-obey-display-actions t))
+  (switch-to-buffer-obey-display-actions t)
+  :config
+  ;; Add the system-native keyrings to auth-sources
+  (pcase system-type
+    ('gnu/linux
+     (add-to-list 'auth-sources "secrets:Login"))
+    ('darwin
+     (add-to-list 'auth-sources 'macos-keychain-internet)
+     (add-to-list 'auth-sources 'macos-keychain-generic))))
 
 ;; We do be evil :devil:
 (use-package evil
