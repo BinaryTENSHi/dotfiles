@@ -11,6 +11,9 @@
       ;; Regex "." matches every file
       '(("." . "/tmp/emacs-backup")))
 
+;; Silence native compilation
+(setq native-comp-async-report-warnings-errors nil)
+
 (use-package emacs
   :ensure nil ;; bultin (duh)
   :hook
