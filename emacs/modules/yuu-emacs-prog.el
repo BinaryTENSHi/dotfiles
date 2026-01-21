@@ -56,9 +56,12 @@
 (use-package jsonrpc
   :ensure t)
 
+(use-package project
+  :ensure (:wait t))
+
 (use-package eglot
   :ensure t
-  :after (jsonrpc flymake)
+  :after (jsonrpc project flymake)
   :custom
   (eglot-autoshutdown t)
   (eglot-inlay-hints-mode t)
