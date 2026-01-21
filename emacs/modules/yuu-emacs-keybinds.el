@@ -9,7 +9,7 @@
   (load-file user-init-file))
 
 (use-package general
-  :ensure t
+  :ensure (:wait t)
   :config
   (general-evil-setup)
 

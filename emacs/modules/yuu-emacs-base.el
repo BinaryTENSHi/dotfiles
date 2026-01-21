@@ -90,11 +90,11 @@ With argument ARG, do this that many times."
 ;; Setup VERTical Interactive COmpletion (vertico)
 (use-package vertico
   :ensure t
-  :bind
-  (:map vertico-map
-	("C-j" . vertico-next)
-	("C-k" . vertico-previous)
-	("C-w" . yuu/backward-delete-word))
+  :general
+  (:keymaps 'vertico-map
+	    "C-j" 'vertico-next
+	    "C-k" 'vertico-previous
+	    "C-w" 'yuu/backward-delete-word)
   :init
   (vertico-mode 1))
 
@@ -111,13 +111,12 @@ With argument ARG, do this that many times."
 ;; Setup COmpletion in Region FUnction (corfu)
 (use-package corfu
   :ensure t
-  :bind
-  ;; Use TAB for cycling
-  (:map corfu-map
-        ("TAB" . corfu-next)
-        ([tab] . corfu-next)
-        ("S-TAB" . corfu-previous)
-        ([backtab] . corfu-previous))
+  :general
+  (:keymaps 'corfu-map
+	    "TAB" 'corfu-next
+	    [tab] 'corfu-next
+	    "S-TAB" 'corfu-previous
+	    [backtab] 'corfu-previous)
   :custom
   (corfu-auto t)
   (corfu-cycle t)
