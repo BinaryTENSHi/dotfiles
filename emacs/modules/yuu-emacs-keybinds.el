@@ -38,6 +38,7 @@
   (yuu/leader
     "SPC" '(project-find-file :wk "Project find file")
     "/" '(consult-ripgrep :wk "Project ripgrep")
+    "." '(find-file :wk "Find file")
 
     "p" '(:ignore t :wk "Project")
     "p p" '(project-switch-project :wk "Switch project")
@@ -49,7 +50,13 @@
   (yuu/leader
     "P" '(:ignore t :wk "Packages")
     "P U" '(elpaca-update-all :wk "Elpaca update all")
-    "P l" '(elpaca-log :wk "Elpaca log")))
+    "P F" '(elpaca-fetch-all :wk "Elpaca fetch all")
+    "P l" '(elpaca-log :wk "Elpaca log"))
+
+  ;; Quit
+  (yuu/leader
+    "q" '(:ignore t :wk "Quit")
+    "q q" '(save-buffers-kill-terminal :wk "Quit Emacs")))
 
 (provide 'yuu-emacs-keybinds)
 ;;; yuu-emacs-keybinds.el ends here
