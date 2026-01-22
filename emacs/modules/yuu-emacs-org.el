@@ -6,9 +6,10 @@
   "Return the org directory depending on the system."
   (concat
    (getenv "HOME")
-   (cond ((string-equal system-type "gnu/linux") "/OneDrive/Notes")
-	 ((string-equal system-type "darwin") "/OneDrive - Binary Network/Notes")
-	 (t (error (format "Unconfigured system-type: %s" system-type))))))
+   (pcase system-type
+     ('gnu/linux "/OneDrive/Notes")
+     ('darwin "/OneDrive - Binary Network/Notes")
+     (_ (error (format "Unconfigured system-type: %s" system-type))))))
 
 (use-package org
   :ensure t
