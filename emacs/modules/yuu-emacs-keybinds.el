@@ -19,6 +19,10 @@
     :prefix "SPC"
     :global-prefix "M-SPC")
 
+  ;; Universal argument
+  (yuu/leader
+    "u" '(universal-argument :wk "Universal argument"))
+
   ;; Buffer management
   (yuu/leader
     "b" '(:ignore t :wk "Buffer")
